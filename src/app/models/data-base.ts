@@ -1,3 +1,5 @@
+import { Quotation } from './quotation';
+
 export const QUOTES = [
   {
     author: 'Jonathan Carroll',
