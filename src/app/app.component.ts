@@ -9,7 +9,7 @@ export class AppComponent {
   showForm = false;
   blueColor = 'blue';
 
-  showFormHandler(): void {
+  showFormHandler($event): void {
     this.showForm == false ? this.showForm = true : this.showForm = false;
   }
 }
