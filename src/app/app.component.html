@@ -4,8 +4,8 @@
   </div>
 </nav>
 <div class="container q-container">
-  <button class="btn-floating teal add-button" (click)="showFormHandler()">
-    <i class="material-icons">add</i>
+  <button class="btn-floating teal add-button" (click)="showFormHandler($event)">
+    <i class="material-icons">{{ showForm == false ? 'add' : 'arrow_back' }}</i>
   </button>
   <div class="row edit-row" [class.drawer]="showForm">
     <div class="input-field col s4">
