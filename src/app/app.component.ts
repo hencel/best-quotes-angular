@@ -12,7 +12,6 @@ export class AppComponent {
 
   showFormHandler($event): void {
     this.showForm == false ? this.showForm = true : this.showForm = false;
-    console.log(this.quotes);
   }
 
 }
