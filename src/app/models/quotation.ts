@@ -1,5 +1,5 @@
 export interface Quotation {
   author: string,
-  sentense: string,
+  quotation: string,
   votes: number
 }
