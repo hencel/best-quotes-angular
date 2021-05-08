@@ -28,4 +28,8 @@ export class AppComponent {
     };
   }
 
+  addVotes(quotation: Quotation, value: number) {
+    quotation.votes += value
+  }
+
 }

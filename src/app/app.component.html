@@ -9,7 +9,7 @@
   </button>
   <div class="row edit-row" [class.drawer]="showForm">
     <div class="input-field col s4">
-      <input type="text" placeholder="Autor" [(ngModel)]="newQuotation.author" />
+      <input type="text" placeholder="Autor" [(ngModel)]="newQuotation.author" required="required"/>
     </div>
     <div class="input-field col s6">
       <input type="text" placeholder="Cytat" [(ngModel)]="newQuotation.quotation" />
@@ -35,10 +35,10 @@
               <span class="badge grey darken-2 left white-text">
                 {{ quotation.votes }}
               </span>
-              <button class="btn blue mr-5">
+              <button class="btn blue mr-5" (click)="addVotes(quotation, +1)">
                 <i class="material-icons">exposure_plus_1</i>
               </button>
-              <button class="btn red">
+              <button class="btn red" (click)="addVotes(quotation, -1)">
                 <i class="material-icons">exposure_neg_1</i>
               </button>
             </div>
