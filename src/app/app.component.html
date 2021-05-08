@@ -9,7 +9,7 @@
   </button>
   <div class="row edit-row" [class.drawer]="showForm">
     <div class="input-field col s4">
-      <input type="text" placeholder="Autor" [(ngModel)]="newQuotation.author" required="required"/>
+      <input type="text" placeholder="Autor" [(ngModel)]="newQuotation.author" />
     </div>
     <div class="input-field col s6">
       <input type="text" placeholder="Cytat" [(ngModel)]="newQuotation.quotation" />
@@ -50,11 +50,27 @@
       <div class="col s12">
         <h5>Najlepiej ocenione</h5>
         <div class="collection">
-          <p class="collection-item">
-            <span class="blue lighten-4 badge">7</span>
-            Jeśli nie chcesz mojej zguby, krrrokodyla daj mi luby.<br>
-            <span class="blue-text">Aleksander Fredro</span>
-          </p>
+          <ng-container *ngFor=" let quotation of quotes">
+            <p class="collection-item" *ngIf="quotation.votes > 0">
+              <span class="blue lighten-4 badge">{{ quotation.votes }}</span>
+              {{ quotation.quotation }}<br>
+              <span class="blue-text">{{ quotation.author }}</span>
+            </p>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="col s12">
+        <h5>Najgorzej ocenione</h5>
+        <div class="collection">
+          <ng-container *ngFor=" let quotation of quotes">
+            <p class="collection-item" *ngIf="quotation.votes < 0">
+              <span class="blue lighten-4 badge">{{ quotation.votes }}</span>
+              {{ quotation.quotation }}<br>
+              <span class="blue-text">{{ quotation.author }}</span>
+            </p>
+          </ng-container>
         </div>
       </div>
     </div>
